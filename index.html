@@ -2383,35 +2383,15 @@
       Conversion date
     */
 
-    function formatDate(
-      dateISO
-    ){
+   function formatDate(dateISO) {
+  if (!dateISO) {
+    return "Non renseignée";
+  }
 
+  const [annee, mois, jour] = dateISO.split("-");
 
-      if(
-        !dateISO
-      ){
-
-        return
-          "Non renseignée";
-
-      }
-
-
-      const [
-        annee,
-        mois,
-        jour
-      ] =
-        dateISO.split(
-          "-"
-        );
-
-
-      return
-        `${jour}/${mois}/${annee}`;
-
-    }
+  return `${jour}/${mois}/${annee}`;
+}
 
 
 
